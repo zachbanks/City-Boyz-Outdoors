@@ -22,6 +22,7 @@ nav ul li {
 }
 
 nav ul li a {
+	text-decoration: none;
   padding: 0 5px;
   font-weight: bold;
 }
