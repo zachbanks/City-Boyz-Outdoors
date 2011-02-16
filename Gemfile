@@ -7,15 +7,17 @@ gem 'rails', '3.0.3'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml'
+gem 'mail'
 
 group :development do
-  gem 'rspec-rails', '2.4.0'
+  gem 'rspec-rails', '2.5.0'
   gem 'webrat'
   gem 'annotate'
+  gem 'autotest'
 end
 
 group :test do
-  gem 'rspec', '2.4.0'
+  gem 'rspec', '2.5.0'
   gem 'factory_girl_rails'
 end
 
