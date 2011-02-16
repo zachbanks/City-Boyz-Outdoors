@@ -1,6 +1,7 @@
 class Feedback
   include ActiveModel::Validations
-  
+  # TODO: Add more elaborate vaildations.
+  # TODO: Access any of security flaws with form (escape html)?
   validates_presence_of :name, :email, :subject, :message
   # Id required by form.
   attr_accessor :id, :name, :email, :subject, :message
