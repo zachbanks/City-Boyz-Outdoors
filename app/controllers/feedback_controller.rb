@@ -11,7 +11,7 @@ class FeedbackController < ApplicationController
       redirect_to contact_path, :notice => "Thanks for your message! We will be in touch shortly!"
     else
       flash[:alert] = "You must fill in all of the fields."
-      render :new
+      render :action => :new
     end
   end
   

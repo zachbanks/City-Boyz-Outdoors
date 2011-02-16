@@ -4,10 +4,14 @@ CityBoyzOutdoors::Application.routes.draw do
   root :to => 'pages#home'
 
   # PagesController named routes.
-  match '/about' => 'pages#about'
+  get '/about' => 'pages#about'
   
-  get '/contact' => 'feedback#new'
-  post '/contact' => 'feedback#create'
+  scope :controller => :feedback do
+    get '/contact' => :new
+    post '/contact' => :create
+  end
+  
+
   
   
   # The priority is based upon order of creation:
