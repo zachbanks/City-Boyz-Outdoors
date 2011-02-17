@@ -1,3 +1,4 @@
+= render :partial => 'error_messages'
 = form_for @feedback, :url => { :action => 'create' }, :html => { :method => :post } do |f|
 	%p
 		= f.label :name

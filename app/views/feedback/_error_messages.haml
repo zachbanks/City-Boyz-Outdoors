@@ -1,0 +1,7 @@
+- if @feedback.errors.any?
+	#error_explanation
+		%h2 #{pluralize(@feedback.errors.count, 'Error')} prevented this message from being sent.
+		%p There were problems with the following fields:
+		%ul
+			- @feedback.errors.full_messages.each do |msg|
+				%li= msg
