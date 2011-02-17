@@ -1,3 +1,8 @@
+- site_link = 'http://hw.libsyn.com/p/8/3/3/8339a864bb8faa83/Markdown_Cheat_Sheet.pdf?sid=0ad3dde937816cafc2da989b9d9961b6&l_sid=29457&l_eid=&l_mid=2413681'
 %h2 Contact Us
 %p If you have a suggestion, comment, or idea that you wish to share with us, just fill out the form below and hit send, and we'll get back to you as soon as possible!
+%p 
+	%em
+		Note:
+		The message field supports #{link_to 'Markdown', site_link, :target => '_blank'} which you can use to format your message.
 = render 'form'
