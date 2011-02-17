@@ -17,22 +17,10 @@ describe FeedbackController do
     
   end
   
-  # TODO: Get tests working!
   describe "POST 'create'" do
     context "success" do
-      
       before(:each) do
         @feedback_attrs = { :name => "John Doe", :email => "john@example.com", :subject => "Message Subject", :message => "Message" }
-      end
-      
-      it "should be successful" do
-        post :create, :feedback => @feedback_attrs
-        response.should be_success
-      end
-      
-      it "should have the correct title" do
-        post :create, :feedback => @feedback_attrs
-        response.should have_selector 'title', :content => "City Boyz Outdoors | Contact"
       end
       
       it "should redirect to contact_path" do
@@ -44,7 +32,15 @@ describe FeedbackController do
         post :create, :feedback => @feedback_attrs
         flash[:notice].should == 'Thanks for your message! We will be in touch shortly!'
       end
-      
+    end
+    context "failure" do
+      before(:each) do
+        @attrs = { :name => "", :email => "", :subject => "", :message => "" }
+      end
+      it "should render the new template" do
+        post :create, :feedback => @attrs
+        response.should render_template 'new'
+      end
     end
   end
   
