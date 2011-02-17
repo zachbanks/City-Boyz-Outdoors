@@ -24,7 +24,7 @@ class Feedback
   
   def save
     if self.valid?
-      FeedbackMailer.send_feedback(self)
+      FeedbackMailer.send_feedback(self).deliver
       true
     else
       false
