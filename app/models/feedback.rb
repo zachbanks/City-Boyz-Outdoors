@@ -1,12 +1,23 @@
 class Feedback
   include ActiveModel::Validations
   
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  
   # Id required by form.
   attr_accessor :id, :name, :email, :subject, :message
   attr_reader :data
   
-  validates_presence_of :name, :email, :subject, :message
-  validates_format_of :email, :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  # ===============
+  # = Validations =
+  # ===============
+  
+  validates :name, :email, :subject, :message, :presence => true
+  validates :email, :format => { :with => email_regex }
+  validates :name, :subject, :length => { :within => 4..40 }
+  
+  # ==================
+  # = Public Methods =
+  # ==================
   
   def initialize(attributes={})
     attributes.each do |key, value|
