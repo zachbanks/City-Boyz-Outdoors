@@ -25,16 +25,16 @@ CityBoyzOutdoors::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
   
   
-  # config.action_mailer.smtp_settings = {
-  #   :address              => "smtp.gmail.com",
-  #   :port                 => 587,
-  #   :domain               => "gmail.com",
-  #   :user_name            => "cityboyzoutdoors@gmail.com",
-  #   :password             => "codyisqueer",
-  #   :authentication       => "plain",
-  #   :enable_starttls_auto => true
-  # }
-  # 
+  ActionMailer::Base.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => "gmail.com",
+    :user_name            => "cityboyzoutdoors@gmail.com",
+    :password             => "codyisqueer",
+    :authentication       => :plain,
+    :enable_starttls_auto => true
+  }
+
   
   
 end
