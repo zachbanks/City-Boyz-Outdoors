@@ -1,5 +1,5 @@
-body {
-  color: black; }
+.user_attention_note {
+  color: red; }
 
 .field_with_errors {
   padding: 2px;

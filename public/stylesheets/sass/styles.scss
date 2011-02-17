@@ -1,8 +1,10 @@
-$text: black;
-body {
-	color: $text;
-}
+// ================
+// = Body Styling =
+// ================
 
+.user_attention_note {
+	font-style: italic;
+}
 
 // ============================
 // = Validation Error Styling =
