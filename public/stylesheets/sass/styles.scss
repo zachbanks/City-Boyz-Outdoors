@@ -8,7 +8,6 @@ body {
 // = Validation Error Styling =
 // ============================
 
-// TODO: Convert this CSS to SCSS.
 .field_with_errors {
   padding: 2px;
   background-color: red;
@@ -24,18 +23,22 @@ body {
   background-color: #f0f0f0;
 }
 
-#error_explanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  margin-bottom: 0px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#error_explanation ul li {
-  font-size: 12px;
-  list-style: square;
+#error_explanation {
+	h2 {
+		text-align: left;
+	  font-weight: bold;
+	  padding: 5px 5px 5px 15px;
+	  font-size: 12px;
+	  margin: -7px;
+	  margin-bottom: 0px;
+	  background-color: #c00;
+	  color: #fff;
+	}
+	
+	ul {
+		li {
+			font-size: 12px;
+			list-style: square;
+		}
+	}
 }
