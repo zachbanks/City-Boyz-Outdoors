@@ -46,4 +46,17 @@ CityBoyzOutdoors::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  
+  ActionMailer::Base.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => "gmail.com",
+    :user_name            => "cityboyzoutdoors@gmail.com",
+    :password             => "codyisqueer",
+    :authentication       => :plain,
+    :enable_starttls_auto => true
+  }
+  
+  
 end
