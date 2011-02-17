@@ -12,7 +12,7 @@
 			/ Render any flash messages.
 			%section
 				- flash.each do |key, value|
-					.flash
+					%div{:class => "flash #{key}"}
 						= value
 			/ Render main content.
 			= yield
