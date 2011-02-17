@@ -1,13 +1,12 @@
 class Feedback
   include ActiveModel::Validations
   
-  validates_presence_of :name, :email, :subject, :message
-  validates_format_of :email, :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, :message => "Your email is invalid."
-  
-  
   # Id required by form.
   attr_accessor :id, :name, :email, :subject, :message
   attr_reader :data
+  
+  validates_presence_of :name, :email, :subject, :message
+  #validates_format_of :email, :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, :message => "Your email is invalid."
   
   def initialize(attributes={})
     attributes.each do |key, value|
