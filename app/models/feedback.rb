@@ -6,7 +6,7 @@ class Feedback
   attr_reader :data
   
   validates_presence_of :name, :email, :subject, :message
-  validates_format_of :email, :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i, :message => "Your email is invalid."
+  validates_format_of :email, :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
   def initialize(attributes={})
     attributes.each do |key, value|
