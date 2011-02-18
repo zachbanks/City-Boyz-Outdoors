@@ -1,9 +1,24 @@
+// Variables.
+$background_color: white; //#bf8b30; -- brownish color.
+$text_color: black;
+$sm_icon_width: 50px;
+
 // ================
 // = Body Styling =
 // ================
 
+body {
+	color: $text_color;
+	background-color: $background_color;
+}
+
 .user_attention_note {
 	font-style: italic;
+}
+
+.social_media_button {
+	width: $sm_icon_width;
+	height: $sm_icon_width;
 }
 
 // ============================
