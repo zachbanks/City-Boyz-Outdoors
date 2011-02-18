@@ -5,7 +5,7 @@ body {
 .user_attention_note {
   font-style: italic; }
 
-.copyright {
+#copyright {
   text-align: center; }
 
 .social_media_button {
