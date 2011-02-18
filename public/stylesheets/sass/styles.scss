@@ -16,9 +16,22 @@ body {
 	font-style: italic;
 }
 
+// Grouping container.
+.social_media_buttons {
+	
+}
+
+// Individual button.
 .social_media_button {
+	// Dimensions.
 	width: $sm_icon_width;
 	height: $sm_icon_width;
+	
+	// Mouse overs.
+	&:hover {
+		// Add some time of jQuery or nice effect here.
+	}
+	
 }
 
 // ============================
