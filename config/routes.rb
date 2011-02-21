@@ -5,7 +5,8 @@ CityBoyzOutdoors::Application.routes.draw do
 
   # PagesController named routes.
   get '/about' => 'pages#about'
-  
+  get '/media' => 'pages#media'
+
   scope :controller => :feedback do
     get '/contact' => :new
     post '/contact' => :create
