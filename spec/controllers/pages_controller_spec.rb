@@ -31,4 +31,18 @@ describe PagesController do
     
   end
 
+  describe "GET 'media'" do
+    
+    it "should be successful" do
+      get 'media'
+      response.should be_success
+    end
+
+    it "should have the correct title" do
+      get :media
+      response.should have_selector 'title', :content => "City Boyz Outdoors | Media"
+    end
+
+  end
+  
 end
