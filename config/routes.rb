@@ -9,8 +9,12 @@ CityBoyzOutdoors::Application.routes.draw do
   match '/admin/login' => 'sessions#new', :as => :login
 
   resources :sessions
-
   resources :admins
+
+  # Media items.
+  scope :path => :media do
+    resources :videos
+  end
 
   # Root route.
   root :to => 'pages#home'
