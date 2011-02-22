@@ -2,11 +2,11 @@ CityBoyzOutdoors::Application.routes.draw do
   
   match 'admin/edit' => 'admins#edit', :as => :edit_current_admin
 
-  match 'signup' => 'admins#new', :as => :signup
+  match '/admins/signup' => 'admins#new', :as => :signup
 
-  match 'logout' => 'sessions#destroy', :as => :logout
+  match '/admin/logout' => 'sessions#destroy', :as => :logout
 
-  match 'login' => 'sessions#new', :as => :login
+  match '/admin/login' => 'sessions#new', :as => :login
 
   resources :sessions
 

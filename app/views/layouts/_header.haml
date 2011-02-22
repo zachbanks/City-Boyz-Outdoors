@@ -8,5 +8,8 @@
 			%li= link_to "Media", media_path
 			%li= link_to "About", about_path
 			%li= link_to "Contact", contact_path
+			- if logged_in?
+				%li You are currently logged in as #{link_to current_admin.email, edit_current_admin_path}
+				%li= link_to "Logout", logout_path
 	/ Social Media Buttons.
 	.social_media_buttons= render :partial => "shared/social_media_buttons"

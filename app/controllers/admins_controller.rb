@@ -1,6 +1,7 @@
 class AdminsController < ApplicationController
   before_filter :login_required, :except => [:new, :create]
 
+  # TODO: Figure out how to implement, so only admins can allow other admins to signup!.r
   def new
     @admin = Admin.new
   end
@@ -22,7 +23,7 @@ class AdminsController < ApplicationController
   def update
     @admin = current_admin
     if @admin.update_attributes(params[:admin])
-      redirect_to root_url, :notice => "Your profile has been updated."
+      redirect_to root_url, :notice => "Your account has been updated."
     else
       render :action => 'edit'
     end

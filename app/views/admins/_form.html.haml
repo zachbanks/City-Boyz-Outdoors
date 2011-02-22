@@ -1,9 +1,5 @@
+= render :partial => 'error_messages'
 = form_for @admin do |f|
-  = f.error_messages
-  %p
-    = f.label :username
-    %br
-    = f.text_field :username
   %p
     = f.label :email, "Email Address"
     %br

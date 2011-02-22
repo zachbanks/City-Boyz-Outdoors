@@ -39,6 +39,10 @@ module ControllerAuthentication
     redirect_to(session[:return_to] || default, *args)
     session[:return_to] = nil
   end
+  
+  def redirect_to_or_default(target, *args)
+    redirect_to(target || default, *args)
+  end
 
   private
 
