@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  before_filter :login_required, :except => [:new, :create]
+  before_filter :login_required 
 
   # TODO: Figure out how to implement, so only admins can allow other admins to signup!.r
   def new
