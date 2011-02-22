@@ -15,6 +15,7 @@ group :development do
   gem 'webrat'
   gem 'annotate'
   gem 'autotest'
+  gem 'nifty-generators'
 end
 
 group :test do
@@ -44,3 +45,5 @@ end
 # group :development, :test do
 #   gem 'webrat'
 # end
+gem "bcrypt-ruby", :require => "bcrypt"
+gem "mocha", :group => :test
