@@ -1,5 +1,7 @@
 CityBoyzOutdoors::Application.routes.draw do
-  
+ 
+  # Login/logout/auth routes.
+  # TODO: Find a way to refactor these four routes.
   match 'admin/edit' => 'admins#edit', :as => :edit_current_admin
 
   match '/admins/signup' => 'admins#new', :as => :signup
@@ -13,7 +15,7 @@ CityBoyzOutdoors::Application.routes.draw do
 
   # Media items.
   scope :path => :media do
-    resources :videos
+    resources :videos # TODO: Change ids of videos to either random names, or title but do not keep ids as just numerics.
   end
 
   # Root route.
