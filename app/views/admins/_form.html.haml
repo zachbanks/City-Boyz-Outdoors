@@ -1,4 +1,4 @@
-= render :partial => 'error_messages'
+= render :partial => 'shared/error_messages', :locals => { :object => @admin }
 = form_for @admin do |f|
   %p
     = f.label :email, "Email Address"

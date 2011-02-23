@@ -1,4 +1,4 @@
-= render :partial => 'error_messages'
+= render :partial => 'shared/error_messages', :locals => { :object => @video }
 = form_for @video do |f|
   %p
     = f.label :title

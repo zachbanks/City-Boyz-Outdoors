@@ -1,8 +1,0 @@
--# TODO: Figure out way to elimate duplication.
-- if @admin.errors.any?
-	#error_explanation
-		%h2 #{pluralize(@admin.errors.count, 'Error')} this form from being submitted.
-		%p There were problems with the following fields:
-		%ul
-			- @admin.errors.full_messages.each do |msg|
-				%li= msg
