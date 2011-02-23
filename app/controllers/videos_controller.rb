@@ -42,7 +42,10 @@ class VideosController < ApplicationController
   end
 
   def destroy
-    
+    video = Video.find(params[:id])
+    msg = "#{video.title} successfully deleted."
+    video.destroy
+    redirect_to videos_path, :flash => { :success => msg }
   end
 
 end
