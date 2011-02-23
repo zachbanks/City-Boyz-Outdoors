@@ -1,4 +1,4 @@
 %ul
   %li= link_to(video.title, video)
   - if logged_in? 
-    %li #{link_to("Edit", edit_video_path(video))} | #{link_to("Delete", video, :method => :delete, :confirm => "Are you sure?", :title => "Delete #{video.title}")}
+    = render :partial => 'shared/admin_edit_links', :locals => { :object => video }
