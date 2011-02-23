@@ -9,6 +9,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml'
 gem 'mail'
 gem 'rdiscount'
+gem 'nokogiri'
 
 group :development do
   gem 'rspec-rails', '2.5.0'

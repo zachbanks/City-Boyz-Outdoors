@@ -15,6 +15,7 @@ class VideosController < ApplicationController
   def create
     @title = "New Video"
     @video = Video.new(params[:video])
+    @video.source_url = format_vimeo_video_url(@video.source_url)
     if @video.save
       redirect_to videos_path, :notice => "Video was successfully created."
     else
@@ -46,6 +47,12 @@ class VideosController < ApplicationController
     msg = "#{video.title} successfully deleted."
     video.destroy
     redirect_to videos_path, :flash => { :success => msg }
+  end
+  
+  private
+  # TODO: Determine where this method should be housed.
+  def format_vimeo_video_url(url)
+    Nokogiri::HTML(url).search("iframe/@src").to_s
   end
 
 end

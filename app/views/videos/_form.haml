@@ -10,8 +10,8 @@
     %br
     = f.text_area :description
   %p
-    = f.label "Video Url"
+    = f.label "Paste in Code"
     %br
-    = f.text_field :source_url
+    = f.text_area :source_url
   %p
     = f.submit ((@video.new_record? ? "Create" : "Update") + " Video")
