@@ -5,8 +5,13 @@
     %br 
     = f.text_field :title
   %p
-    = f.label "Paste in code"
+    = render :partial => 'shared/markdown_info'
+    = f.label :description
     %br
-    = f.text_area :source_url
+    = f.text_area :description
+  %p
+    = f.label "Video Url"
+    %br
+    = f.text_field :source_url
   %p
     = f.submit (@video.new_record? ? "Create" : "Update") + " Video"

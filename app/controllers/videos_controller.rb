@@ -15,15 +15,15 @@ class VideosController < ApplicationController
   def create
     @title = "New Video"
     @video = Video.new(params[:video])
-    #if @video.save
-    # redirect_to videos_path, :notice => "Video was successfully created."
-    #else
-     render :action => :new
-    #end
+    if @video.save
+      redirect_to videos_path, :notice => "Video was successfully created."
+    else
+      render :action => :new
+    end
   end
 
   def show
-    
+    @video = Video.find(params[:id])
   end
 
   def edit

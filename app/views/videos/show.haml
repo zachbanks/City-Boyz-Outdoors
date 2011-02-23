@@ -1,0 +1,7 @@
+%h2.video_title= @video.title
+.video_description
+  :markdown
+    #{@video.description}
+%iframe{:src => @video.source_url, :width => "400", :height => "400"}
+.comments
+  %h4 Comments
