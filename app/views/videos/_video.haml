@@ -1,2 +1,4 @@
 %ul
-  %li= link_to  video.title, video
+  %li= link_to(video.title, video)
+  - if logged_in? 
+    %li #{link_to("Edit", edit_video_path(video))} | #{link_to("Delete", "#")}

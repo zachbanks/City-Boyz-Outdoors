@@ -24,14 +24,21 @@ class VideosController < ApplicationController
 
   def show
     @video = Video.find(params[:id])
+    @title = @video.title
   end
 
   def edit
-    
+    @video = Video.find(params[:id])    
+    @title = "Editing #@video.title"
   end
 
   def update
-    
+   @video = Video.find(params[:id])
+   if @video.update_attributes(params[:video])
+     redirect_to @video, :flash => { :success => "#{@video.title} was successfully updated." } 
+   else
+     render :action => :edit
+   end
   end
 
   def destroy
