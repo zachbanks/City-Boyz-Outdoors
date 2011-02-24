@@ -1,7 +1,52 @@
 require 'spec_helper'
 
 describe Video do
-  pending "add some examples to (or delete) #{__FILE__}"
+  subject { Video.new :title => 'MyTitle', :description => 'My description.', :source_url => 'http://www.example.com' }
+
+  describe "validations" do
+
+    context "success" do
+      specify { should have(0).errors_on :title }
+      specify { should have(0).errors_on :description } 
+      specify { should have(0).errors_on :source_url }
+    end
+
+    context "failure" do
+      it "should have no title error" do
+        subject[:title] = nil
+        should have(1).error_on :title
+      end
+      it "should have no description error" do
+        subject[:description] = nil
+        should have(1).error_on :description
+      end
+      it "should have no source_url error" do 
+        subject[:source_url] = nil
+        should have(2).error_on :source_url # 1 for presence, and 1 for format.
+      end
+    end
+
+    describe "format validations" do
+      describe "source_url" do
+        it "should accept valid addresses" do
+          valid = %w{ http://google.com http://www.google.com http://www.google.com?id=212 }
+          valid.each do |url|
+            subject[:source_url] = url
+            should be_valid
+          end
+        end
+        it "should reject invalid addresses" do
+          invalid = %w{ www.google.com google.com zach_banks 23sfsa }
+          invalid.each do |url|
+            subject[:source_url] = url
+            should_not be_valid
+          end
+        end
+      end
+    end
+
+  end
+
 end
 
 # == Schema Information
