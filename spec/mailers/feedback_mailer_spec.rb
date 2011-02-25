@@ -1,6 +1,22 @@
 require "spec_helper"
 
-# TODO: Write tests for all things mailer.
 describe FeedbackMailer do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  before do
+    ActionMailer::Base.delivery_method = :test
+    ActionMailer::Base.perform_deliveries = true
+    ActionMailer::Base.deliveries = []
+  end
+
+  let(:feedback) { mock_model(Feedback).as_null_object }
+  let!(:mail) { FeedbackMailer.send_feedback(feedback).deliver }
+
+  it "should deliver an email successfully" do
+    ActionMailer::Base.deliveries.size.should == 1
+  end
+
+  it "should be sent to cityboyzoutdoors@gmail.com" do
+    mail.to.should == ['cityboyzoutdoors@gmail.com']
+  end
+
 end
