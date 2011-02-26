@@ -56,8 +56,13 @@ describe Video do
   end
   
   describe "permalinks" do
-    it "should have a permalink with the a certain format" do
-      subject.permalink.should =~ /\d-\w*(-.*){0,}/ # Format: id-the-title.
+    it "should parameterized permalink" do
+
+      subject.permalink.should == "#{subject.title.parameterize}"
+    end
+    it "should update permalink if title is changed" do
+      subject.update_attributes :title => "New title"
+      subject.permalink.should == "new-title"
     end
   end
   

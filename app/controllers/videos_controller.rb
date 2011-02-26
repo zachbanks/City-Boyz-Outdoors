@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
 
   before_filter :login_required, :except => [:index, :show]
-
+  
   def index
     @title = "Videos"
     @videos = Video.all
@@ -10,6 +10,11 @@ class VideosController < ApplicationController
   def new
    @title = "New Video"
    @video = Video.new
+  end
+
+  def show
+    @video = Video.find(params[:id])
+    @title = @video.title
   end
 
   def create
@@ -21,11 +26,6 @@ class VideosController < ApplicationController
     else
       render :action => :new
     end
-  end
-
-  def show
-    @video = Video.find(params[:id])
-    @title = @video.title
   end
 
   def edit
