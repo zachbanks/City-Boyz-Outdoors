@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Video do
-  subject { Video.new :title => 'MyTitle', :description => 'My description.', :source_url => 'http://www.example.com' }
+  subject { Factory(:video) }
 
   describe "validations" do
 
@@ -9,6 +9,7 @@ describe Video do
       specify { should have(0).errors_on :title }
       specify { should have(0).errors_on :description } 
       specify { should have(0).errors_on :source_url }
+      specify { should have(0).errors_on :permlink }
     end
 
     context "failure" do
@@ -23,6 +24,10 @@ describe Video do
       it "should have no source_url error" do 
         subject[:source_url] = nil
         should have(2).error_on :source_url # 1 for presence, and 1 for format.
+      end
+      it "should have no permalink error" do
+        subject[:permalink] = nil
+        should have(1).error_on :permalink
       end
     end
 
@@ -52,6 +57,12 @@ describe Video do
       v1 = Factory(:video, :created_at => 1.day.ago)
       v2 = Factory(:video, :created_at => 1.hour.ago)
       Video.all.should == [v2, v1]
+    end
+  end
+  
+  describe "permalinks" do
+    it "should have a permalink with the a certain format" do
+      subject.permalink.should =~ /\d-\w*(-.*){0,}/ # Format: id-the-title.
     end
   end
   
