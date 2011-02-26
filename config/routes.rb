@@ -1,5 +1,15 @@
 CityBoyzOutdoors::Application.routes.draw do
- 
+
+  # TODO: Make these work!
+  #scope :path => 'admin', :controller => :sessions do
+  #  get '/login' => :new
+  #  post '/login' => :create
+  #end
+
+  #scope :controller => :videos do
+  #  post '/media/videos/new' => :create # TODO: Refactor so that you are not having to say /media/video.
+  #end
+
   # Login/logout/auth routes.
   # TODO: Find a way to refactor these four routes.
   match 'admin/edit' => 'admins#edit', :as => :edit_current_admin
@@ -25,14 +35,12 @@ CityBoyzOutdoors::Application.routes.draw do
   get '/about' => 'pages#about'
   get '/media' => 'pages#media'
 
+  # TODO: Figure out a way to test these routes.
   scope :controller => :feedback do
     get '/contact' => :new
     post '/contact' => :create
   end
-  
 
-  
-  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
