@@ -30,7 +30,7 @@ class VideosController < ApplicationController
 
   def edit
     @video = Video.find(params[:id])    
-    @title = "Editing #@video.title"
+    @title = "Editing \"#{@video.title}\""
   end
 
   def update
