@@ -7,7 +7,7 @@ class Video < ActiveRecord::Base
             :format => { :with => /http:\/\/.*/ }
             # :message => "Source url cannot be blank and must be a valid url." # TODO Make regex better.
   
-
+  default_scope :order => 'videos.created_at DESC'
 end
 
 

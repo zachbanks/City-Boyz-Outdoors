@@ -46,7 +46,15 @@ describe Video do
     end
 
   end
-
+  
+  describe "ordering" do
+    it "should return videos from newest to oldest" do
+      v1 = Factory(:video, :created_at => 1.day.ago)
+      v2 = Factory(:video, :created_at => 1.hour.ago)
+      Video.all.should == [v2, v1]
+    end
+  end
+  
 end
 
 # == Schema Information
