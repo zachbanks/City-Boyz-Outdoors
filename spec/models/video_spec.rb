@@ -9,7 +9,6 @@ describe Video do
       specify { should have(0).errors_on :title }
       specify { should have(0).errors_on :description } 
       specify { should have(0).errors_on :source_url }
-      specify { should have(0).errors_on :permlink }
     end
 
     context "failure" do
@@ -24,10 +23,6 @@ describe Video do
       it "should have no source_url error" do 
         subject[:source_url] = nil
         should have(2).error_on :source_url # 1 for presence, and 1 for format.
-      end
-      it "should have no permalink error" do
-        subject[:permalink] = nil
-        should have(1).error_on :permalink
       end
     end
 
