@@ -1,7 +1,7 @@
 class Video < ActiveRecord::Base
   attr_accessible :title, :description, :source_url, :permalink
   
-  validates :title, :description, :permalink, :presence => true
+  validates :title, :description, :presence => true
   validates :source_url, 
             :presence => true, 
             :format => { :with => /http:\/\/.*/ }
