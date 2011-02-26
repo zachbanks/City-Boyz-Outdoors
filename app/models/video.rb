@@ -18,7 +18,7 @@ class Video < ActiveRecord::Base
   private
   
   def create_permalink
-    self.permalink ||= title.parameterize
+    self.permalink = "#{title.parameterize}"
   end
   
 end

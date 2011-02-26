@@ -25,7 +25,7 @@ CityBoyzOutdoors::Application.routes.draw do
 
   # Media items.
   scope :path => :media do
-    resources :videos # TODO: Change ids of videos to either random names, or title but do not keep ids as just numerics.
+    resources :videos
   end
 
   # Root route.
