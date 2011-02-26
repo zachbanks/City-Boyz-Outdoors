@@ -57,6 +57,7 @@ describe Video do
   
 end
 
+
 # == Schema Information
 #
 # Table name: videos
@@ -67,5 +68,6 @@ end
 #  created_at  :datetime
 #  updated_at  :datetime
 #  description :text
+#  permalink   :string(255)
 #
 

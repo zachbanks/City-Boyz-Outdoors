@@ -1,5 +1,5 @@
 class Video < ActiveRecord::Base
-  attr_accessible :title, :description, :source_url
+  attr_accessible :title, :description, :source_url, :permalink
   
   validates :title, :description, :presence => true
   validates :source_url, 
@@ -8,7 +8,21 @@ class Video < ActiveRecord::Base
             # :message => "Source url cannot be blank and must be a valid url." # TODO Make regex better.
   
   default_scope :order => 'videos.created_at DESC'
+  
+  before_save :create_permalink
+  
+  def to_param
+    "#{id}-#{permalink}"
+  end
+  
+  private
+  
+  def create_permalink
+    self.permalink ||= title.parameterize
+  end
+  
 end
+
 
 
 # == Schema Information
@@ -21,5 +35,6 @@ end
 #  created_at  :datetime
 #  updated_at  :datetime
 #  description :text
+#  permalink   :string(255)
 #
 
