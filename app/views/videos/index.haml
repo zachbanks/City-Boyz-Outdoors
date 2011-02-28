@@ -1,5 +1,6 @@
--# TODO: Add pagination.
 %h2 Videos
 - if logged_in?
   = link_to "Add new video", new_video_path
+= paginate @videos
 = render :partial => @videos
+= paginate @videos

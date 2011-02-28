@@ -13,7 +13,7 @@ if last_video
   num = last_video.id
 else
   num = 1
-end
+end?
 (num + 1).upto((num + 99)) do |i|
   Video.create(
     :title => "Video #{i}",
