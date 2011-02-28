@@ -8,7 +8,13 @@
 
 # Creates videos.
 vc = VideosController.new
-(Video.last.id + 1).upto((Video.last.id + 99)) do |i|
+last_video = Video.last
+if last_video
+  num = last_video.id
+else
+  num = 1
+end
+(num + 1).upto((num + 99)) do |i|
   Video.create(
     :title => "Video #{i}",
     :description => "This is the description for video #{i}.",
