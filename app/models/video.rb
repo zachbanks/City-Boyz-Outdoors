@@ -3,9 +3,9 @@ class Video < ActiveRecord::Base
   
   validates :title, :description, :presence => true
   validates :source_url, 
-            :presence => true, 
+            :presence => { :message => "Source url cannot be blank and must be a valid url." },
             :format => { :with => /http:\/\/.*/ }
-            # :message => "Source url cannot be blank and must be a valid url." # TODO Make regex better.
+             # TODO Make regex better.
   
   default_scope :order => 'videos.created_at DESC'
   
