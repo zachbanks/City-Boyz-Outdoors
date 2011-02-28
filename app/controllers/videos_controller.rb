@@ -4,7 +4,7 @@ class VideosController < ApplicationController
   
   def index
     @title = "Videos"
-    @videos = Video.all
+    @videos = Video.page(params[:page]).per(10)
   end
   
   def new

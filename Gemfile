@@ -7,6 +7,7 @@ gem 'mail' # TODO: Figure out whether this is required to use ActionMailer. If n
 gem 'rdiscount'
 gem 'nokogiri'
 gem "bcrypt-ruby", :require => "bcrypt"
+gem 'kaminari'
 
 group :development, :test do
   gem 'rspec-rails', '2.5.0'
