@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
+gem 'rails'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'haml'
 gem 'mail' # TODO: Figure out whether this is required to use ActionMailer. If not, remove.
@@ -10,8 +10,8 @@ gem "bcrypt-ruby", :require => "bcrypt"
 gem 'kaminari'
 
 group :development, :test do
-  gem 'rspec-rails', '2.5.0'
-  gem 'rspec', '2.5.0'
+  gem 'rspec-rails'
+  gem 'rspec'
   gem 'webrat'
   gem 'annotate'
   gem 'autotest'

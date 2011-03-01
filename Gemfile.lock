@@ -115,9 +115,9 @@ DEPENDENCIES
   mocha
   nifty-generators
   nokogiri
-  rails (= 3.0.3)
+  rails
   rdiscount
-  rspec (= 2.5.0)
-  rspec-rails (= 2.5.0)
+  rspec
+  rspec-rails
   sqlite3-ruby
   webrat
