@@ -1,11 +1,12 @@
+- cache? = true
 / HTML 5 Shiv for incompatible browsers.
 / [if lt IE 9]
 	%script(src="http://html5shiv.googlecode.com/svn/trunk/html5.hs")
 / [if lt IE 8]
-	= stylesheet_link_tag 'blueprint/ie'
+	= stylesheet_link_tag 'blueprint/ie', :cache => cache?
 
-= stylesheet_link_tag 'blueprint/screen', :media => "screen"
-= stylesheet_link_tag 'blueprint/print', :media => "print"
-= stylesheet_link_tag 'styles', :media => 'screen' 
+= stylesheet_link_tag 'blueprint/screen', :media => "screen", :cache => cache?
+= stylesheet_link_tag 'blueprint/print', :media => "print", :cache => cache?
+= stylesheet_link_tag 'styles', :media => 'screen', :cache => cache?
 -# When you use jQuery, you will have to update all destroy methods in controllers in order to work with jQuery.
-= javascript_include_tag :defaults
+= javascript_include_tag :defaults, :cache => cache?
