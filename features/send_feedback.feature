@@ -6,3 +6,9 @@ Feature: Send feedback to site administrators
   Scenario: Contact Us form exists
     Given I am on the contact us page
     Then I should see the contact us form
+    
+  Scenario: Send feedback
+    Given I am on the contact us page
+    When I fill in the contact us form
+    And I press "Submit"
+    Then my message will be sent to the site administrators
