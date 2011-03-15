@@ -12,3 +12,9 @@ Feature: Send feedback to site administrators
     When I fill in the contact us form
     And I press "Submit"
     Then my message will be sent to the site administrators
+    
+  Scenario: Contact Us form validates
+    Given I am on the contact us page
+    When I leave fields on the contact us form blank or invalid
+    And I press "Submit"
+    Then I will see validation errors
