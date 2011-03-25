@@ -8,6 +8,7 @@ gem 'rdiscount'
 gem 'nokogiri'
 gem "bcrypt-ruby", :require => "bcrypt"
 gem 'kaminari'
+gem 'jquery-rails'
 
 group :development, :test do
   gem 'cucumber'
