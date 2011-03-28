@@ -1,11 +1,11 @@
-%h2.video_title= @video.title
+%h2.video_title= video.title
 %br
 = link_to "Back to Videos", videos_path
 - if logged_in?
-  .admin_edit_links= render :partial => 'shared/admin_edit_links', :locals => { :object => @video }
+  .admin_edit_links= render :partial => 'shared/admin_edit_links', :locals => { :object => video }
 .video_description
   :markdown
-    #{@video.description}
-%iframe{:src => @video.source_url, :width => "400", :height => "400"}
+    #{video.description}
+%iframe{:src => video.source_url, :width => "400", :height => "400"}
 .comments
   %h3 Comments

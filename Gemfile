@@ -9,6 +9,7 @@ gem 'nokogiri'
 gem "bcrypt-ruby", :require => "bcrypt"
 gem 'kaminari'
 gem 'jquery-rails'
+gem 'decent_exposure'
 
 group :development, :test do
   gem 'cucumber'
