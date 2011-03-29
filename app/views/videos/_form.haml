@@ -1,8 +1,8 @@
-= render :partial => 'shared/error_messages', :locals => { :object => @video }
-= form_for @video do |f|
+= render :partial => 'shared/error_messages', :locals => { :object => video }
+= form_for video do |f|
 	%p
 		%p.user_attention_note
-			= "Changing the title will also change the url." unless @video.new_record?
+			= "Changing the title will also change the url." unless video.new_record?
 		= f.label :title
 		%br 
 		= f.text_field :title
@@ -12,7 +12,7 @@
 		%br
 		= f.text_area :description
 	%p
-		-if @video.new_record?
+		-if video.new_record?
 			= f.label "Paste in Code"
 			%br
 			= f.text_area :source_url
@@ -21,5 +21,5 @@
 			%br
 			= f.text_field :source_url
 	%p
-		= f.submit ((@video.new_record? ? "Create" : "Update") + " Video")
+		= f.submit ((video.new_record? ? "Create" : "Update") + " Video")
 		
