@@ -17,6 +17,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rspec'
   gem 'capybara'
+  gem 'webrat'
   gem 'annotate'
   gem 'autotest'
   gem 'nifty-generators'
