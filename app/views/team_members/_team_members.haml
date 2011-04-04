@@ -1,0 +1,10 @@
+%ul#team_members
+	- @team_members.each do |member|
+		%li.team_member
+			.name 
+				Name:
+				= member.class
+			.bio 
+				Bio: 
+				= member.bio
+			.admin_edit_links= render :partial => 'shared/admin_edit_links', :locals => { :object => member }

@@ -22,6 +22,7 @@ CityBoyzOutdoors::Application.routes.draw do
 
   resources :sessions
   resources :admins
+  resources :team_members
 
   # Media items.
   scope :path => :media do
@@ -32,7 +33,7 @@ CityBoyzOutdoors::Application.routes.draw do
   root :to => 'pages#home'
 
   # PagesController named routes.
-  get '/about' => 'pages#about'
+  get '/about' => 'team_members#index'
   get '/media' => 'pages#media'
 
   # TODO: Figure out a way to test these routes.

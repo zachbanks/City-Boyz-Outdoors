@@ -6,5 +6,10 @@ Feature: Create new team members
   Scenario: Shows links to add team memebers
     Given I am on the about us page
     And I am logged in as an admin
-    Then I should see a link called "Add New Team Member"
+    Then I should see a link "Add New Team Member"
   
+  Scenario: Form to create add team members should exist
+    Given I am on the about us page
+    When I click the link "Add New Team Member"
+    And I am logged in as an admin
+    Then I should see a form to add new team members

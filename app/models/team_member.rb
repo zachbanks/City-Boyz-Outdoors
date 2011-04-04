@@ -1,9 +1,17 @@
 class TeamMember < ActiveRecord::Base
   
+  attr_accessible :name, :email, :bio
+  
   # ===============
   # = Validations =
   # ===============
   validates :name, :email, :presence => true
+  validates :email, :format => { :with => $EMAIL_REGEX }
+  
+  
+  def to_s
+    name
+  end
   
 end
 

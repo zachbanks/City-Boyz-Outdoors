@@ -1,0 +1,19 @@
+= render :partial => 'shared/error_messages', :locals => { :object => team_member }
+= form_for team_member do |f|
+	%p
+		= f.label :name
+		%br
+		= f.text_field :name
+	%p
+		= f.label :email
+		%br
+		= f.text_field :email
+	%p
+		= f.label :bio
+		%br
+		= f.text_area :bio
+	%p
+		= f.submit "Add New Team Member"
+		
+		
+		
