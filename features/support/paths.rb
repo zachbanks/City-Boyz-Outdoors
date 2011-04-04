@@ -12,6 +12,8 @@ module NavigationHelpers
       '/'
     when /the contact us page/
       contact_path
+    when /the about us page/
+      about_path
     else
       begin
         page_name =~ /the (.*) page/
