@@ -2,6 +2,7 @@
 - class_name = object.class.to_s.underscore
 - object_edit_path = "edit_#{class_name}_path(#{object.id})"
 = link_to("Edit", instance_eval(object_edit_path)) + " | "
+-# TODO: Change so that every object must respond to to_s
 - if object.respond_to?(:title)
 	- name = object.title
 - else
