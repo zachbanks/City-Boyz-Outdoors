@@ -1,7 +1,8 @@
 class Feedback
   include ActiveModel::Validations
   
-  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  # TODO: Change this horrible programming practice!
+  $EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
   # Id required by form.
   attr_accessor :id, :name, :email, :subject, :message
@@ -12,7 +13,7 @@ class Feedback
   # ===============
   
   validates :name, :email, :subject, :message, :presence => true
-  validates :email, :format => { :with => email_regex }
+  validates :email, :format => { :with => $EMAIL_REGEX }
   validates :name, :subject, :length => { :within => 4..40 }
   
   # ==================

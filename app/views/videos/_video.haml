@@ -1,4 +1,4 @@
-%ul
-  %li= link_to(video.title, video)
-  - if logged_in? 
-    = render :partial => 'shared/admin_edit_links', :locals => { :object => video }
+%li.video
+	= link_to(video.title, video)
+	%br
+	= render :partial => 'shared/admin_edit_links', :locals => { :object => video } if logged_in?
