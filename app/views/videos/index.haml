@@ -1,6 +1,5 @@
 %h2 Videos
-- if logged_in?
-  = link_to "Add new video", new_video_path
+= link_to "Add new video", new_video_path if logged_in?
 = paginate videos
 = render :partial => videos
 = paginate videos

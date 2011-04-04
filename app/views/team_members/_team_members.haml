@@ -7,4 +7,4 @@
 			.bio 
 				Bio: 
 				= member.bio
-			.admin_edit_links= render :partial => 'shared/admin_edit_links', :locals => { :object => member }
+			.admin_edit_links= render :partial => 'shared/admin_edit_links', :locals => { :object => member } if logged_in?

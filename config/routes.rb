@@ -22,7 +22,7 @@ CityBoyzOutdoors::Application.routes.draw do
 
   resources :sessions
   resources :admins
-  resources :team_members
+  resources :team_members, :execpt => :show
 
   # Media items.
   scope :path => :media do

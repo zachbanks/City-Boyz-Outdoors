@@ -1,7 +1,9 @@
 class TeamMembersController < ApplicationController
   expose(:team_member)
   # TODO: Figure out why team_members is nil when using decent exposure.
-  #expose(:team_members) 
+  # expose(:team_members)
+  
+  before_filter :login_required, :except => :index
   
   def index
     @title = "About Us"
