@@ -15,6 +15,10 @@ class Video < ActiveRecord::Base
     "#{id}-#{permalink}"
   end
   
+  def to_s
+    title
+  end
+  
   private
   
   def create_permalink
