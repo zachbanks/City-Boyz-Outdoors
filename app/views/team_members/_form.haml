@@ -9,6 +9,7 @@
 		%br
 		= f.text_field :email
 	%p
+		= render :partial => 'shared/markdown_info'
 		= f.label :bio
 		%br
 		= f.text_area :bio

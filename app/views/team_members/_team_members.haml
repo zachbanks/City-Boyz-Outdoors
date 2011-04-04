@@ -5,6 +5,6 @@
 				Name:
 				= member.name
 			.bio 
-				Bio: 
-				= member.bio
+				:markdown
+					Bio: #{member.bio}
 			.admin_edit_links= render :partial => 'shared/admin_edit_links', :locals => { :object => member } if logged_in?
