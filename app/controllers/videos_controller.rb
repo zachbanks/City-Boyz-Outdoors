@@ -1,9 +1,6 @@
-require 'open-uri'
-require 'json'
-
 class VideosController < ApplicationController
 
-  expose(:videos) { Video.page(params[:page]).per(10) }
+  expose(:videos) { Video.page(params[:page]).per(9) }
   expose(:video)
 
   before_filter :login_required, :except => [:index, :show]
