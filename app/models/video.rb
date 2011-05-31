@@ -23,6 +23,14 @@ class Video < ActiveRecord::Base
     title
   end
   
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+  
   private
   
   def create_permalink

@@ -7,6 +7,7 @@ class VideosController < ApplicationController
   
   def index
     @title = "Videos"
+    videos = Video.search(params[:search])
   end
   
   def new
