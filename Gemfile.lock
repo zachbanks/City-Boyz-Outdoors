@@ -45,6 +45,8 @@ GEM
     celerity (0.8.8)
     childprocess (0.1.7)
       ffi (~> 0.6.3)
+    client_side_validations (3.0.4)
+      activesupport (~> 3.0.0)
     cucumber (0.10.0)
       builder (>= 2.1.2)
       diff-lcs (~> 1.1.2)
@@ -99,6 +101,10 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_where (1.0.4)
+      activerecord (~> 3.0.0)
+      activesupport (~> 3.0.0)
+      arel (~> 2.0.7)
     mime-types (1.16)
     mocha (0.9.12)
     nifty-generators (0.4.5)
@@ -167,6 +173,7 @@ DEPENDENCIES
   annotate
   bcrypt-ruby
   capybara
+  client_side_validations
   cucumber-rails
   decent_exposure
   factory_girl_rails
@@ -179,6 +186,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mail
+  meta_where
   mocha
   nifty-generators
   nokogiri

@@ -25,9 +25,9 @@ class Video < ActiveRecord::Base
   
   def self.search(search)
     if search
-      where('title LIKE ?', "%#{search}%") # Basic text search. Can replace with search engine if needed.
+      where(:title.matches => "%#{search}%") # Using MetaWhere to search.
     else
-      scoped
+      scoped # Return a blank scope without executing query.
     end
   end
   

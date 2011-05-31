@@ -1,5 +1,5 @@
 = render :partial => 'shared/error_messages', :locals => { :object => @feedback }
-= form_for @feedback, :url => { :action => 'create' }, :html => { :method => :post } do |f|
+= form_for @feedback, :validate => true ,:url => { :action => 'create' }, :html => { :method => :post } do |f|
 	%p
 		= f.label :name
 		%br
