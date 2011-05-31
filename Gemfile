@@ -22,6 +22,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'guard-livereload'
   gem 'guard-cucumber'
+  gem 'guard-sass'
   gem 'growl'
   gem 'nifty-generators'
   gem 'factory_girl_rails'

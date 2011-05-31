@@ -5,7 +5,7 @@
 		= csrf_meta_tag
 		/ Render stylesheets.
 		= render 'layouts/stylesheets'
-	%body
+	%body{:id => "#{params[:controller].parameterize}_controller"}
 		.container
 			/ Render header.
 			= render 'layouts/header'
