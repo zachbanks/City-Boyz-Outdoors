@@ -1,0 +1,39 @@
+#videos_controller {
+	
+	// The ul that contains each video.
+	#videos {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+	// The lis that contain each .video.
+	li {
+		list-style: none;
+	}
+	
+	// Each video.
+	.video {
+		margin: 5px 15px;
+		float: left;
+		
+		// The video's caption.
+		.video_caption {
+			text-align: center;
+		}
+		
+		// The video's thumbnail.
+		.video_thumbnail {
+			width: 250px;
+			height: 200px;
+			border: 2px solid black;
+		}
+
+	}
+	
+	// Div that contains page pagination links at bottom of page.
+	.pagination {
+		clear: both;
+	}
+
+
+}
