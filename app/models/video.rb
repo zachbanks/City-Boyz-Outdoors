@@ -1,5 +1,5 @@
 class Video < ActiveRecord::Base
-  attr_accessible :title, :description, :source_url, :permalink
+  attr_accessible :title, :description, :source_url, :permalink, :thumbnail_url
   
   validates :title, :description, :presence => true
   validates :source_url, 
@@ -10,6 +10,7 @@ class Video < ActiveRecord::Base
   default_scope :order => 'videos.created_at DESC'
   
   before_save :create_permalink
+  before_save :get_vimeo_video_thumbnail
   
   def to_param
     "#{id}-#{permalink}"
@@ -27,6 +28,15 @@ class Video < ActiveRecord::Base
     else
       permalink
     end
+  end
+  
+  def get_vimeo_video_thumbnail(size="large")
+    url = source_url
+    vimeo_video_id = url.scan(/vimeo.com\/video\/(\d+)\/?/).flatten.first.to_s # Extract the video id.
+    vimeo_video_json_url = "http://vimeo.com/api/v2/video/#{vimeo_video_id}.json" # API call
+    
+    # Parse the JSON and extract the thumbnail_large url
+    self.thumbnail_url = JSON.parse(open(vimeo_video_json_url).read).first["thumbnail_#{size}"] rescue nil
   end
   
 end

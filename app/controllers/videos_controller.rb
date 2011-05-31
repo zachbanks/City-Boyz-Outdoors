@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'json'
+
 class VideosController < ApplicationController
 
   expose(:videos) { Video.page(params[:page]).per(10) }
@@ -46,7 +49,7 @@ class VideosController < ApplicationController
   end
   
   private
-  # TODO: Determine where this method should be housed.
+  # TODO: Determine where theses methods should be housed.
   def format_vimeo_video_url(url)
     Nokogiri::HTML(url).search("iframe/@src").to_s
   end

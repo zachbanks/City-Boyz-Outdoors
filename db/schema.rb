@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110403194017) do
+ActiveRecord::Schema.define(:version => 20110531032831) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20110403194017) do
     t.datetime "updated_at"
     t.text     "description"
     t.string   "permalink"
+    t.string   "thumbnail_url"
   end
 
 end
