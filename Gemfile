@@ -21,6 +21,7 @@ group :development, :test do
   gem 'rb-fsevent'
   gem 'guard-rspec'
   gem 'guard-livereload'
+  gem 'guard-cucumber'
   gem 'growl'
   gem 'nifty-generators'
   gem 'factory_girl_rails'
