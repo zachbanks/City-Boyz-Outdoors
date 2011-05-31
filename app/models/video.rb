@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'json'
+
 class Video < ActiveRecord::Base
   attr_accessible :title, :description, :source_url, :permalink, :thumbnail_url
   

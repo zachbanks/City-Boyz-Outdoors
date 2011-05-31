@@ -24,17 +24,18 @@ CityBoyzOutdoors::Application.routes.draw do
   resources :admins
   resources :team_members, :execpt => :show
 
-  # Media items.
-  scope :path => :media do
-    resources :videos
-  end
+  # # Media items.
+  # scope :path => :media do
+  #   resources :videos
+  # end
+  resources :videos
 
   # Root route.
   root :to => 'pages#home'
 
   # PagesController named routes.
   get '/about' => 'team_members#index'
-  get '/media' => 'pages#media'
+  #get '/media' => 'pages#media'
 
   # TODO: Figure out a way to test these routes.
   scope :controller => :feedback do
