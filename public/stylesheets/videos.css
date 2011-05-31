@@ -4,7 +4,7 @@
 #videos_controller li {
   list-style: none; }
 #videos_controller .video {
-  margin: 5px 15px;
+  margin: 15px 15px;
   float: left; }
   #videos_controller .video .video_caption {
     text-align: center; }
@@ -12,5 +12,5 @@
     width: 250px;
     height: 200px;
     border: 2px solid black; }
-#videos_controller .pagination {
+#videos_controller footer {
   clear: both; }

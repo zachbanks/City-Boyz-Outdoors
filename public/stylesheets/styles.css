@@ -5,8 +5,8 @@ body {
 .user_attention_note {
   font-style: italic; }
 
-div.pagination {
-  margin: 15px 0; }
+footer {
+  padding-bottom: 50px; }
 
 #copyright {
   text-align: center;

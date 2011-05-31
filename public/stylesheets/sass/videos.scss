@@ -13,7 +13,7 @@
 	
 	// Each video.
 	.video {
-		margin: 5px 15px;
+		margin: 15px 15px;
 		float: left;
 		
 		// The video's caption.
@@ -30,10 +30,9 @@
 
 	}
 	
-	// Div that contains page pagination links at bottom of page.
-	.pagination {
+	// Clears the footer so that it doesn't act weird when there aren't enough videos to make the grid.
+	footer {
 		clear: both;
 	}
-
 
 }
