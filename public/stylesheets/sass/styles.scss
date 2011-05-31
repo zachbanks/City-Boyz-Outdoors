@@ -25,6 +25,13 @@ footer {
 		padding-bottom: 50px
 }
 
+.team_member_photo {
+	$photo-size: 100px;
+	width: $photo-size;
+	height: $photo-size;
+}
+
+
 // ==========
 // = Footer =
 // ==========

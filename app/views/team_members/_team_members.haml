@@ -1,6 +1,8 @@
 %ul#team_members
 	- @team_members.each do |member|
 		%li.team_member
+			.photo
+				= image_tag member.photo_url, :class => "team_member_photo", :alt => "Photo of #{member.name}."
 			.name 
 				Name:
 				= member.name
