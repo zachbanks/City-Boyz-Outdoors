@@ -1,0 +1,2 @@
+module SocialMessagesHelper
+end
