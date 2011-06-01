@@ -1,4 +1,7 @@
 %h2 Latest News
 - @latest_messages.each do |msg|
 	.social_message
-		%p #{format_date(msg.date_posted)} - #{msg.body}
+		%p 
+			%span.sm_date #{format_date(msg.date_posted)}
+			\- 
+			%span.sm_body #{msg.body}
