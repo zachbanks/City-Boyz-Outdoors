@@ -1,4 +1,9 @@
 %h2 Videos
+#search
+	- form_tag videos_path, :method => :get do
+		%p
+			= text_field_tag :search, params[:search], :size => 30
+			= submit_tag "Search", :name => nil
 = link_to "Add new video", new_video_path if logged_in?
 = paginate videos
 %ul#videos

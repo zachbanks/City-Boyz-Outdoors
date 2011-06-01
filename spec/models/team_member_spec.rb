@@ -27,6 +27,7 @@ describe TeamMember do
 end
 
 
+
 # == Schema Information
 #
 # Table name: team_members
@@ -37,4 +38,6 @@ end
 #  bio        :text
 #  created_at :datetime
 #  updated_at :datetime
+#  photo_url  :string(255)
 #
+

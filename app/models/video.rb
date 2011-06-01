@@ -23,6 +23,14 @@ class Video < ActiveRecord::Base
     title
   end
   
+  def self.search(search)
+    if search
+      where(:title.matches => "%#{search}%") # Using MetaWhere to search.
+    else
+      scoped # Return a blank scope without executing query.
+    end
+  end
+  
   private
   
   def create_permalink
@@ -46,16 +54,18 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: videos
 #
-#  id          :integer         not null, primary key
-#  title       :string(255)
-#  source_url  :string(255)
-#  created_at  :datetime
-#  updated_at  :datetime
-#  description :text
-#  permalink   :string(255)
+#  id            :integer         not null, primary key
+#  title         :string(255)
+#  source_url    :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#  description   :text
+#  permalink     :string(255)
+#  thumbnail_url :string(255)
 #
 

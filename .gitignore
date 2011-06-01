@@ -10,3 +10,4 @@ doc/app
 *~
 .DS_Store
 config/initializers/setup_mailer.rb
+config/initializers/twitter.rb

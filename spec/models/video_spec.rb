@@ -69,16 +69,18 @@ describe Video do
 end
 
 
+
 # == Schema Information
 #
 # Table name: videos
 #
-#  id          :integer         not null, primary key
-#  title       :string(255)
-#  source_url  :string(255)
-#  created_at  :datetime
-#  updated_at  :datetime
-#  description :text
-#  permalink   :string(255)
+#  id            :integer         not null, primary key
+#  title         :string(255)
+#  source_url    :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#  description   :text
+#  permalink     :string(255)
+#  thumbnail_url :string(255)
 #
 

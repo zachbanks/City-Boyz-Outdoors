@@ -8,6 +8,10 @@ body {
 footer {
   padding-bottom: 50px; }
 
+.team_member_photo {
+  width: 100px;
+  height: 100px; }
+
 #copyright {
   text-align: center;
   font-size: 11px;

@@ -1,5 +1,7 @@
 CityBoyzOutdoors::Application.routes.draw do
 
+  get "social_messages/index"
+
   # TODO: Make these work!
   #scope :path => 'admin', :controller => :sessions do
   #  get '/login' => :new
@@ -29,9 +31,10 @@ CityBoyzOutdoors::Application.routes.draw do
   #   resources :videos
   # end
   resources :videos
+  resources :social_messages, :only => [:new, :create]
 
   # Root route.
-  root :to => 'pages#home'
+  root :to => 'SocialMessages#index'
 
   # PagesController named routes.
   get '/about' => 'team_members#index'

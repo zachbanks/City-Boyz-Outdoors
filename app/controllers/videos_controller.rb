@@ -1,6 +1,6 @@
 class VideosController < ApplicationController
 
-  expose(:videos) { Video.page(params[:page]).per(9) }
+  expose(:videos) { Video.search(params[:search]).page(params[:page]).per(9) }
   expose(:video)
 
   before_filter :login_required, :except => [:index, :show]

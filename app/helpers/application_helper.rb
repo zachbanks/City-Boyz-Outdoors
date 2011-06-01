@@ -45,4 +45,8 @@ module ApplicationHelper
     }
   end
   
+  def format_date(date)
+    date.strftime("%D")
+  end
+  
 end

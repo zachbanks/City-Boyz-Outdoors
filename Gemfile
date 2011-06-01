@@ -10,6 +10,9 @@ gem "bcrypt-ruby", :require => "bcrypt"
 gem 'kaminari'
 gem 'jquery-rails'
 gem 'decent_exposure'
+gem 'meta_where'
+gem 'client_side_validations'
+gem 'twitter'
 
 group :development, :test do
   gem 'cucumber-rails'
