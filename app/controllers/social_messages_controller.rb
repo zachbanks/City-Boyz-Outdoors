@@ -1,8 +1,30 @@
 class SocialMessagesController < ApplicationController
   
+  expose(:social_message)
+  
+  before_filter :login_required, :except => :index
+  
   def index
     @title = "Welcome to CityBoyzOutdoors.com"
     @latest_messages = latest_tweets
+  end
+  
+  def new
+    @title = "Post New Status"
+  end
+  
+  def create
+    @title = "Post New Status"
+    if social_message.valid?
+      begin
+        Twitter.update(social_message.body)
+      rescue
+        redirect_to root_path, :flash => { :warning => "Sorry, an error has occurred." }
+      end
+      redirect_to root_path, :notice => "Your status has been posted!"
+    else
+      render :action => :new
+    end
   end
 
 

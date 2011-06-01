@@ -1,0 +1,14 @@
+= render :partial => 'shared/error_messages', :locals => { :object => social_message }
+= form_for social_message do |f|
+	%p
+		= f.label :body, "Status"
+		%br
+		= f.text_area :body
+	/ %p
+	/ 	= f.label :source, "Service"
+	/ 	= f.collection_select(social_message, "categories", ["Twitter"], {})
+	%p
+		= f.submit "Post"
+		
+		
+		
