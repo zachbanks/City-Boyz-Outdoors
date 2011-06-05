@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails'
 gem 'sqlite3-ruby', :require => 'sqlite3' # TODO: Switch to PostgreSQL.
+gem 'rake', '0.9.1'
 gem 'haml'
 gem 'mail' # TODO: Figure out whether this is required to use ActionMailer. If not, remove.
 gem 'rdiscount'
