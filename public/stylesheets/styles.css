@@ -1,12 +1,27 @@
 body {
   color: black;
-  background-color: white; }
+  background-color: #354538; }
+
+.container {
+  position: relative;
+  width: 1024px;
+  padding: 50px;
+  top: 50px;
+  background-color: #ada48e;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
 
 .user_attention_note {
   font-style: italic; }
 
+a {
+  color: #4f0100; }
+
 footer {
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+  width: 1024px;
+  background-color: #12291a; }
 
 .team_member_photo {
   width: 100px;

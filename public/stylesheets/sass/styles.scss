@@ -1,19 +1,47 @@
+// Color scheme.
+$cbo-tan: #ADA48E;
+$cbo-foliage-green: #354538;
+$cbo-dark-green: #12291A;
+$cbo-dark-red: #4F0100;
+$cbo-hunting-orange: #FF2400;
+
 // Variables.
-$background_color: white; //#bf8b30; -- brownish color.
-$text_color: black;
-$sm_icon_width: 50px;
+$secondary-background-color: $cbo-foliage-green;
+$main-background-color: $cbo-tan;
+$text-color: black;
+$sm-icon-width: 50px;
+$page-width: 1024px;
 
 // ================
 // = Body Styling =
 // ================
 
 body {
-	color: $text_color;
-	background-color: $background_color;
+	color: $text-color;
+	background-color: $secondary-background-color;
+}
+
+.container {
+	position: relative;
+	width: $page-width;
+	padding: 50px;
+	top: 50px;
+	background-color: $main-background-color;
+	
+	// Rounded corners.
+	$corner-radius: 3px;
+	-webkit-border-radius: $corner-radius;
+	-moz-border-radius: $corner-radius;
+	border-radius: $corner-radius;
+	
 }
 
 .user_attention_note {
 	font-style: italic;
+}
+
+a { 
+	color: $cbo-dark-red;
 }
 
 // Grouping container.
@@ -22,7 +50,9 @@ body {
 }
 
 footer {
-		padding-bottom: 50px
+		padding-bottom: 50px;
+		width: $page-width;
+		background-color: $cbo-dark-green;
 }
 
 .team_member_photo {
@@ -45,8 +75,8 @@ footer {
 // Individual button.
 .social_media_button {
 	// Dimensions.
-	width: $sm_icon_width;
-	height: $sm_icon_width;
+	width: $sm-icon-width;
+	height: $sm-icon-width;
 	
 	// Mouse overs.
 	&:hover {
