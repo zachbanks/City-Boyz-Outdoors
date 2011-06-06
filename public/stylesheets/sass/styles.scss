@@ -1,6 +1,7 @@
 // Variables.
-$background_color: white; //#bf8b30; -- brownish color.
-$text_color: black;
+$main_body_background-color: #ADA48E;
+$background_color: #354538;
+$text_color: #000;
 $sm_icon_width: 50px;
 
 // ================
@@ -10,6 +11,18 @@ $sm_icon_width: 50px;
 body {
 	color: $text_color;
 	background-color: $background_color;
+}
+
+.container {
+	background-color: $main_body_background-color;
+	position: relative;
+  width: 1024px;
+  top: 50px;
+	padding: 50px;
+}
+
+a {
+	color: #4F0100
 }
 
 .user_attention_note {
@@ -22,7 +35,8 @@ body {
 }
 
 footer {
-		padding-bottom: 50px
+		padding-bottom: 50px;
+		background-color: #12291A;
 }
 
 .team_member_photo {
@@ -59,9 +73,10 @@ footer {
 // = Validation Error Styling =
 // ============================
 
+$error-color: red;
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: $error-color;
   display: table;
 }
 

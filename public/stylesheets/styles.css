@@ -1,12 +1,23 @@
 body {
   color: black;
-  background-color: white; }
+  background-color: #354538; }
+
+.container {
+  background-color: #ada48e;
+  position: relative;
+  width: 1024px;
+  top: 50px;
+  padding: 50px; }
+
+a {
+  color: #4F0100; }
 
 .user_attention_note {
   font-style: italic; }
 
 footer {
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+  background-color: #12291A; }
 
 .team_member_photo {
   width: 100px;
