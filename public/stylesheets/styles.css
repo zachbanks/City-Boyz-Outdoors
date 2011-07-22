@@ -61,3 +61,6 @@ footer {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square; }
+
+header {
+  border-bottom: 2px solid white; }
