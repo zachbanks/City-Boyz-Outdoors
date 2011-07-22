@@ -4,6 +4,7 @@ class Admin < ActiveRecord::Base
 
   attr_accessor :password
   before_save :prepare_password
+  before_create { generate_token(:auth_token) }
 
   validates_uniqueness_of :email, :allow_blank => true
   validates_format_of :email, :with => /^[-a-z0-9_+\.]+\@([-a-z0-9]+\.)+[a-z0-9]{2,4}$/i
@@ -21,6 +22,13 @@ class Admin < ActiveRecord::Base
     BCrypt::Engine.hash_secret(pass, password_salt)
   end
 
+  # Remember Me.
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while Admin.exists?(column => self[column])
+  end
+
   private
 
   def prepare_password
@@ -30,6 +38,9 @@ class Admin < ActiveRecord::Base
     end
   end
 end
+
+
+
 
 # == Schema Information
 #
@@ -41,5 +52,6 @@ end
 #  password_salt :string(255)
 #  created_at    :datetime
 #  updated_at    :datetime
+#  auth_token    :string(255)
 #
 
