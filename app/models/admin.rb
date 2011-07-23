@@ -25,7 +25,7 @@ class Admin < ActiveRecord::Base
   # Remember Me.
   def generate_token(column)
     begin
-      self[column] = SecureRandom.urlsafe_base64
+      self[column] = SecureRandom.base64(10)
     end while Admin.exists?(column => self[column])
   end
 
