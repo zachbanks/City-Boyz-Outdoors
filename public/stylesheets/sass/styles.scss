@@ -200,7 +200,7 @@ nav {
 	@include shadow;
 }
 
-input[type=text], input[type=password]{
+.big_text_field > input[type=text], .big_text_field > input[type=password] {
 	padding: 9px;
 	outline: 0;
 	width: 300px;
