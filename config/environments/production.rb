@@ -47,6 +47,8 @@ CityBoyzOutdoors::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   
+  # NOTE: Will need to be changed.
+  config.action_mailer.default_url_options = { :host => "city_boyz_outdoors.heroku.com" }
   
   ActionMailer::Base.smtp_settings = {
     :address              => "smtp.gmail.com",

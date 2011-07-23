@@ -25,6 +25,7 @@ CityBoyzOutdoors::Application.routes.draw do
   resources :sessions
   resources :admins
   resources :team_members, :execpt => :show
+  resources :password_resets
 
   # # Media items.
   # scope :path => :media do

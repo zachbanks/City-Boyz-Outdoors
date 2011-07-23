@@ -62,16 +62,20 @@ describe Admin do
 end
 
 
+
+
 # == Schema Information
 #
 # Table name: admins
 #
-#  id            :integer         not null, primary key
-#  email         :string(255)
-#  password_hash :string(255)
-#  password_salt :string(255)
-#  created_at    :datetime
-#  updated_at    :datetime
-#  auth_token    :string(255)
+#  id                     :integer         not null, primary key
+#  email                  :string(255)
+#  password_hash          :string(255)
+#  password_salt          :string(255)
+#  created_at             :datetime
+#  updated_at             :datetime
+#  auth_token             :string(255)
+#  password_reset_token   :string(255)
+#  password_reset_sent_at :datetime
 #
 

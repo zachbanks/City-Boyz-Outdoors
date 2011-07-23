@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110722214716) do
+ActiveRecord::Schema.define(:version => 20110722231956) do
 
   create_table "admins", :force => true do |t|
     t.string   "email"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20110722214716) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   create_table "comments", :force => true do |t|

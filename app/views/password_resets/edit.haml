@@ -1,0 +1,13 @@
+= render :partial => 'shared/error_messages', :locals => { :object => @admin }
+
+= form_for @admin, :url => password_reset_path(params[:id]) do |f|
+	%p
+		= f.label :password
+		%br
+		= f.password_field :password
+	%p
+		= f.label :password_confirmation
+		%br
+		= f.password_field :password_confirmation
+	%p
+		= f.submit "Change Password"
