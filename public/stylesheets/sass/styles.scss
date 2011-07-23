@@ -55,6 +55,7 @@ body {
 	@include rounded-corners(10px);
 	@include shadow;
 	background-color: $main-background-color;
+	border: 2px solid black;
 }
 
 .user_attention_note {

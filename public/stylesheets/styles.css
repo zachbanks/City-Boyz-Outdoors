@@ -16,7 +16,8 @@ body {
   -moz-box-shadow: 5px 5px 10px #1f1f1f;
   -webkit-box-shadow: 5px 5px 10px #1f1f1f;
   box-shadow: 5px 5px 10px #1f1f1f;
-  background-color: #ada48e; }
+  background-color: #ada48e;
+  border: 2px solid black; }
 
 .user_attention_note {
   font-style: italic; }
