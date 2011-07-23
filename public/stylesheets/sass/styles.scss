@@ -12,6 +12,21 @@ $text-color: black;
 $sm-icon-width: 50px;
 $page-width: 1024px;
 
+// Mixins.
+@mixin rounded-corners($corner-radius:3px) {
+	// Rounded corners.
+	-webkit-border-radius: $corner-radius;
+	-moz-border-radius: $corner-radius;
+	border-radius: $corner-radius;
+}
+
+@mixin shadow {
+	$color: lighten(black, 12%);
+	-moz-box-shadow: 5px 5px 10px $color;
+	-webkit-box-shadow: 5px 5px 10px $color;
+	box-shadow: 5px 5px 10px $color;
+}
+
 // ================
 // = Body Styling =
 // ================
@@ -25,15 +40,14 @@ body {
 	position: relative;
 	width: $page-width;
 	padding: 50px;
-	top: 50px;
-	background-color: $main-background-color;
-	
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: auto;
+	margin-right: auto;
 	// Rounded corners.
-	$corner-radius: 3px;
-	-webkit-border-radius: $corner-radius;
-	-moz-border-radius: $corner-radius;
-	border-radius: $corner-radius;
-	
+	@include rounded-corners(10px);
+	@include shadow;
+	background-color: $main-background-color;
 }
 
 .user_attention_note {
@@ -131,4 +145,42 @@ footer {
 
 header {
 	border-bottom: 2px solid white;
+}
+
+// ==============
+// = Navigation =
+// ==============
+
+nav {
+	
+	li {
+		padding: 0;
+		display: inline;
+		
+		
+		a {
+			font-family: Arial;
+			font-size: 11px;
+			text-decoration: none;
+			float: left;
+			padding: 10px;
+			background-color: $cbo-dark-red;
+			color: #fff;
+		}
+		
+		a:hover {
+			background-color: $cbo-hunting-orange;
+			margin-top: 2px;
+			padding-bottom: 12px;
+		}
+		
+	}
+	
+}
+
+// ==============
+// = Login Page =
+// ==============
+input[type=text], input[type=password]{
+	border: 1px red solid;
 }
