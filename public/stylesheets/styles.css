@@ -76,16 +76,41 @@ nav li {
   display: inline; }
   nav li a {
     font-family: Arial;
-    font-size: 11px;
+    font-size: 14px;
     text-decoration: none;
     float: left;
-    padding: 10px;
+    padding: 20px;
     background-color: #4f0100;
     color: #fff; }
   nav li a:hover {
-    background-color: #ff2400;
-    margin-top: 2px;
-    padding-bottom: 12px; }
+    background-color: #ff2400; }
+
+.login_form {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  position: relative;
+  left: 212px;
+  width: 500px;
+  padding: 25px 0 25px 50px;
+  margin: 50px 0;
+  background-color: #cccccc;
+  -moz-box-shadow: 5px 5px 10px #1f1f1f;
+  -webkit-box-shadow: 5px 5px 10px #1f1f1f;
+  box-shadow: 5px 5px 10px #1f1f1f; }
 
 input[type=text], input[type=password] {
-  border: 1px red solid; }
+  padding: 9px;
+  outline: 0;
+  width: 300px;
+  font: normal 14px Verdana, Tahoma, sans-serif;
+  border: 1px solid black;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px; }
+  input[type=text]:focus, input[type=password]:focus {
+    border: 2px solid #0C5AA6;
+    -moz-box-shadow: 0px 0px 8px #0c5aa6;
+    -webkit-box-shadow: 0px 0px 8px #0c5aa6;
+    box-shadow: 0px 0px 8px #0c5aa6; }
